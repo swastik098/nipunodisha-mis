@@ -1,13 +1,88 @@
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
+}
+
+/* Add these to your existing global.css file */
+
+/* Dashboard Specific Styles */
+.dashboard-card {
+  transition: all 0.3s ease;
+  border-left: 4px solid transparent;
+}
+
+.dashboard-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1) !important;
+}
+
+.stat-card {
+  border-left-color: #6366f1;
+}
+.activity-card {
+  border-left-color: #10b981;
+}
+
+.chart-container {
+  position: relative;
+  min-height: 300px;
+}
+
+/* Responsive adjustments for dashboard */
+@media (max-width: 900px) {
+  .chart-container {
+    min-height: 250px;
+  }
+
+  .dashboard-card {
+    margin-bottom: 16px;
+  }
+}
+
+@media (max-width: 600px) {
+  .chart-container {
+    min-height: 200px;
+  }
+
+  .MuiTypography-h5 {
+    font-size: 1.25rem !important;
+  }
+
+  .MuiTypography-h6 {
+    font-size: 1.1rem !important;
+  }
+}
+
+/* Custom scrollbar for activity feed */
+.activity-feed {
+  max-height: 300px;
+  overflow-y: auto;
+  padding-right: 8px;
+}
+
+.activity-feed::-webkit-scrollbar {
+  width: 6px;
+}
+
+.activity-feed::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 3px;
+}
+
+.activity-feed::-webkit-scrollbar-thumb {
+  background: #c1c1c1;
+  border-radius: 3px;
+}
+
+.activity-feed::-webkit-scrollbar-thumb:hover {
+  background: #a1a1a1;
 }
